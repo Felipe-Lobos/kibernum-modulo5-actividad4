@@ -1,0 +1,4 @@
+cl\kibernumacademy\pages\FormularioTransferenciaPage.class
+cl\kibernumacademy\RunCucumberTest.class
+cl\kibernumacademy\steps\FormularioTransferenciaSteps.class
+FormularioUsuarioPage.class
