@@ -42,11 +42,13 @@ public class FormularioTransferenciaSteps {
     }
 
     //@When("^transfiere (-?\\d+) a la cuenta (\\d+)$")
-    @When("^transfiere (-?\\d+) a la cuenta {string}")
-    public void transfiere_a_la_cuenta(double monto, String cuenta) {
+    @When("transfiere {double} a la cuenta {string}")
+    public void transfiere_a_la_cuenta(Double monto, String cuenta) {
         formularioTransferenciaPage.ingresarMonto(monto);
         formularioTransferenciaPage.ingresarCuenta(cuenta);
         formularioTransferenciaPage.pagar();
+        System.out.println("Monto: " + monto);
+        System.out.println("Cuenta: " + cuenta);
     }
 
     @Then("debería ver el mensaje {string}")
