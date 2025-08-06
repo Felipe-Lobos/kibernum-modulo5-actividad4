@@ -86,12 +86,12 @@ public class FormularioUsuarioSteps {
             }
         }
 
-        // Una vez completados todos los campos, se envía el formulario
-        formularioUsuarioPage.enviarFormulario();
     }
 
     @Then("los datos ingresados deben mostrarse correctamente en consola")
     public void los_datos_ingresados_deben_mostrarse_correctamente_en_consola() {
+        // Una vez completados todos los campos, se envía el formulario
+        formularioUsuarioPage.enviarFormulario();
         System.out.println("Los datos fueron ingresados y enviados correctamente.");
     }
 

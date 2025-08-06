@@ -40,8 +40,7 @@ public class FormularioTransferenciaSteps {
     public void que_el_usuario_ha_iniciado_sesión() {
         formularioTransferenciaPage.navigateTo();
     }
-
-    //@When("^transfiere (-?\\d+) a la cuenta (\\d+)$")
+    
     @When("transfiere {double} a la cuenta {string}")
     public void transfiere_a_la_cuenta(Double monto, String cuenta) {
         formularioTransferenciaPage.ingresarMonto(monto);

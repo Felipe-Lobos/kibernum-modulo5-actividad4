@@ -61,22 +61,5 @@ public class FormularioUsuarioPage{
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(buttonImprimir));
         element.click();
     }
-    
-/*
-    public String obtenerNombre() {
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(inputEmail));
-        element.getText();
-    }
-    public String obtenerApellido() {
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(inputEmail));
-        element.getText();
-    }
-    public String obtenerEmail() {
-       
-    }
-    public String obtenerEdad() {
 
-    }
-
-*/
 }
