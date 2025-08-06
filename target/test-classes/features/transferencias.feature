@@ -2,7 +2,7 @@ Feature: Transferencia bancaria
 
 Scenario Outline: Validar transferencias bancarias
     Given que el usuario ha iniciado sesión
-    When transfiere <monto> a la cuenta <cuenta>
+    When transfiere <monto> a la cuenta "<cuenta>"
     Then debería ver el mensaje "<resultado>"
 
     Examples:

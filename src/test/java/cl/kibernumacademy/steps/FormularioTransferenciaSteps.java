@@ -16,7 +16,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class FormularioTransferenciaSteps {
     private WebDriver driver;
-    private String resultado;
     private FormularioTransferenciaPage formularioTransferenciaPage;
 
     @Before
@@ -41,19 +40,22 @@ public class FormularioTransferenciaSteps {
         formularioTransferenciaPage.navigateTo();
     }
 
-    //@When("^transfiere (-?\\d+) a la cuenta (\\d+)$")
-    @When("^transfiere (-?\\d+) a la cuenta {string}")
-    public void transfiere_a_la_cuenta(double monto, String cuenta) {
+    // @When("^transfiere (-?\\d+) a la cuenta (\\d+)$")
+    @When("transfiere {double} a la cuenta {string}")
+    public void transfiere_a_la_cuenta(Double monto, String cuenta) {
         formularioTransferenciaPage.ingresarMonto(monto);
         formularioTransferenciaPage.ingresarCuenta(cuenta);
         formularioTransferenciaPage.pagar();
+        System.out.println("Monto: " + monto);
+        System.out.println("Cuenta: " + cuenta);
     }
 
     @Then("debería ver el mensaje {string}")
     public void debería_ver_el_mensaje(String mensajeEsperado) {
         String mensajeReal = formularioTransferenciaPage.obtenerMensajeResultado();
         Assertions.assertTrue(mensajeReal.contains(mensajeEsperado),
-                "EL mensaje real no contiene el esperado, Esperado: '" + mensajeEsperado + "', Real: '" + mensajeReal+ "'");
+                "EL mensaje real no contiene el esperado, Esperado: '" + mensajeEsperado + "', Real: '" + mensajeReal
+                        + "'");
 
     }
 

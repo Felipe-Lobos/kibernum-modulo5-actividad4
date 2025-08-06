@@ -1,6 +1,6 @@
 Feature: Formulario de datos de Carla
-  
-  Scenario: Completar datos de Sofia en el formulario usando DataTable
+
+  Scenario: Completar datos de Carla en el formulario usando DataTable
     Given que el usuario accede al formulario de datos
     When completa los siguientes datos:
     | campo     | valor         |
@@ -9,5 +9,6 @@ Feature: Formulario de datos de Carla
     | email     | carla@qa.com  |
     | edad      | 35            |
     Then los datos ingresados deben mostrarse correctamente en consola
+
 
 

@@ -8,24 +8,24 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class FormularioUsuarioPage{
+public class FormularioUsuarioPage {
 
-    private By inputNombre   = By.cssSelector("#tabla-datos tr:nth-of-type(1) td:nth-of-type(2) input");
+    private By inputNombre = By.cssSelector("#tabla-datos tr:nth-of-type(1) td:nth-of-type(2) input");
     private By inputApellido = By.cssSelector("#tabla-datos tr:nth-of-type(2) td:nth-of-type(2) input");
-    private By inputEmail    = By.cssSelector("#tabla-datos tr:nth-of-type(3) td:nth-of-type(2) input");
-    private By inputEdad     = By.cssSelector("#tabla-datos tr:nth-of-type(4) td:nth-of-type(2) input");
+    private By inputEmail = By.cssSelector("#tabla-datos tr:nth-of-type(3) td:nth-of-type(2) input");
+    private By inputEdad = By.cssSelector("#tabla-datos tr:nth-of-type(4) td:nth-of-type(2) input");
 
     private By buttonImprimir = By.id("btn-imprimir-datos");
-    
+
     private WebDriverWait wait;
     private WebDriver driver;
 
-    public FormularioUsuarioPage(WebDriver driver){
+    public FormularioUsuarioPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
-     public void navigateTo() {
+    public void navigateTo() {
         driver.get("https://web-actividad-4.netlify.app/");
     }
 
@@ -36,7 +36,7 @@ public class FormularioUsuarioPage{
         element.sendKeys(nombre);
     }
 
-     // Ingresar el apellido
+    // Ingresar el apellido
     public void ingresarApellido(String apellido) {
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(inputApellido));
         element.clear();
@@ -57,23 +57,8 @@ public class FormularioUsuarioPage{
         element.sendKeys(String.valueOf(edad));
     }
 
-    public void enviarFormulario(){
+    public void enviarFormulario() {
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(buttonImprimir));
         element.click();
     }
-
-/*
-    public String obtenerNombreMostrado() {
-        inputNombre.
-    }
-    public String obtenerApellidoMostrado() {
-        
-    }
-    public String obtenerEmailMostrado() {
-       
-    }
-    public String obtenerEdadMostrada() {
-    }
-
-*/
 }
